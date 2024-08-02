@@ -1,6 +1,6 @@
 # @ autoWaifu
 - auto sends random waifu images to your discord channel.
-- cooldown set to @ 30 ( you can change it as per your choice )
+- cooldown set to @ 30s ( you can change it as per your choice )
 - easy to setup and button navigation
 
 # @ Disclaimer ⚠️
