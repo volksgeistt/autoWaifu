@@ -72,13 +72,13 @@ class Waifu(commands.Cog):
 
     def loadChannels(self):
         try:
-            with open('waifu.json', 'r') as f:
+            with open('db/waifu.json', 'r') as f:
                 self.waifu_channels = json.load(f)
         except (FileNotFoundError, json.JSONDecodeError):
             self.waifu_channels = {}
 
     def saveChannels(self):
-        with open('waifu.json', 'w') as f:
+        with open('db/waifu.json', 'w') as f:
             json.dump(self.waifu_channels, f)
 
     async def fetchImages(self):
@@ -93,7 +93,7 @@ class Waifu(commands.Cog):
                 return data['url']
         return None
 
-    @tasks.loop(seconds=30)
+    @tasks.loop(seconds=15)
     async def auto_sendWaifu(self):
         if not self.waifu_channels:
             return
